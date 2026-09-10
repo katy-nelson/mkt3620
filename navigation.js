@@ -1,89 +1,159 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // ================================
-    // MOBILE MENU
-    // ================================
+    /* ======================================
+       PRIMARY NAVIGATION LINKS
+    ====================================== */
 
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
+    const navigationItems = [
+        {
+            name: "Home",
+            link: "index.html"
+        },
 
-    if (menuToggle && navLinks) {
+        {
+            name: "About Me",
+            link: "about.html"
+        },
 
-        menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("show");
+        {
+            name: "Experience",
+            link: "experience.html"
+        },
 
-            // Change icon
-            if (navLinks.classList.contains("show")) {
-                menuToggle.innerHTML = "✕";
-            } else {
-                menuToggle.innerHTML = "☰";
-            }
+        {
+            name: "Projects",
+            link: "projects.html"
+        },
+
+        {
+            name: "Contact",
+            link: "contact.html"
+        }
+    ];
+
+
+    /* ======================================
+       FIND NAVIGATION CONTAINER
+    ====================================== */
+
+    const navContainer =
+        document.getElementById("primary-navigation");
+
+
+    if (navContainer) {
+
+        const navList =
+            document.createElement("ul");
+
+
+        navigationItems.forEach(function (item) {
+
+            const listItem =
+                document.createElement("li");
+
+            const link =
+                document.createElement("a");
+
+
+            link.textContent =
+                item.name;
+
+            link.href =
+                item.link;
+
+
+            listItem.appendChild(link);
+
+            navList.appendChild(listItem);
+
         });
 
 
-        // Close menu after clicking a link
-        const links = navLinks.querySelectorAll("a");
+        navContainer.appendChild(navList);
 
-        links.forEach(link => {
-            link.addEventListener("click", () => {
-                navLinks.classList.remove("show");
-                menuToggle.innerHTML = "☰";
-            });
-        });
     }
 
 
-    // ================================
-    // AUTOMATIC ACTIVE PAGE
-    // ================================
+    /* ======================================
+       AUTOMATICALLY SHOW ACTIVE PAGE
+    ====================================== */
 
-    const currentPage =
-        window.location.pathname.split("/").pop() || "index.html";
+    let currentPage =
+        window.location.pathname
+        .split("/")
+        .pop();
+
+
+    if (currentPage === "") {
+        currentPage = "index.html";
+    }
+
 
     const navigationLinks =
-        document.querySelectorAll(".nav-links a");
+        document.querySelectorAll(
+            "#primary-navigation a"
+        );
 
-    navigationLinks.forEach(link => {
+
+    navigationLinks.forEach(function (link) {
 
         const linkPage =
             link.getAttribute("href");
 
+
         if (linkPage === currentPage) {
+
             link.classList.add("active");
+
         }
 
     });
 
 
-    // ================================
-    // SMOOTH SCROLLING
-    // ================================
+    /* ======================================
+       MOBILE MENU
+    ====================================== */
 
-    document
-        .querySelectorAll('a[href^="#"]')
-        .forEach(anchor => {
+    const menuButton =
+        document.getElementById("menu-toggle");
 
-            anchor.addEventListener("click", function(event) {
 
-                const targetID =
-                    this.getAttribute("href");
+    const primaryNav =
+        document.getElementById(
+            "primary-navigation"
+        );
 
-                if (targetID === "#") return;
 
-                const target =
-                    document.querySelector(targetID);
+    if (menuButton && primaryNav) {
 
-                if (target) {
-                    event.preventDefault();
+        menuButton.addEventListener(
+            "click",
+            function () {
 
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
+                primaryNav.classList.toggle(
+                    "show"
+                );
+
+
+                if (
+                    primaryNav.classList.contains(
+                        "show"
+                    )
+                ) {
+
+                    menuButton.textContent = "✕";
+
                 }
 
-            });
+                else {
 
-        });
+                    menuButton.textContent = "☰";
+
+                }
+
+            }
+        );
+
+    }
 
 });
