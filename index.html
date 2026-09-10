@@ -1,873 +1,269 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Katy's World 💗</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
 
-    html {
-      scroll-behavior: smooth;
-    }
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fff7fb;
-      color: #3d2b35;
-      overflow-x: hidden;
-    }
+    <title>Katy's Website</title>
 
-    /* ================= NAV ================= */
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 8%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
-      background: rgba(255,255,255,.88);
-      backdrop-filter: blur(15px);
-
-      border-bottom: 1px solid #ffd2e3;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 900;
-      color: #ff4f9a;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    nav a {
-      color: #4d3542;
-      text-decoration: none;
-      font-weight: 700;
-      transition: .3s;
-    }
-
-    nav a:hover {
-      color: #ff4f9a;
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      min-height: 680px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
-
-      position: relative;
-      overflow: hidden;
-
-      background:
-        radial-gradient(circle at 20% 20%, #ffcbe0 0, transparent 25%),
-        radial-gradient(circle at 80% 30%, #f0c9ff 0, transparent 25%),
-        radial-gradient(circle at 50% 80%, #ffd9ec 0, transparent 30%),
-        linear-gradient(135deg, #fff0f7, #fce9ff, #fff8fb);
-    }
-
-    .hero-content {
-      max-width: 900px;
-      z-index: 5;
-    }
-
-    .mini-title {
-      display: inline-block;
-      background: white;
-      padding: 10px 18px;
-      border-radius: 30px;
-      margin-bottom: 20px;
-
-      color: #ff4f9a;
-      font-weight: 900;
-
-      box-shadow: 0 8px 25px rgba(255,79,154,.15);
-    }
-
-    .hero h1 {
-      font-size: clamp(55px, 9vw, 100px);
-      line-height: .95;
-      margin-bottom: 25px;
-      font-weight: 900;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(
-        90deg,
-        #ff3f8f,
-        #ff79b0,
-        #c74cff
-      );
-
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 21px;
-      line-height: 1.7;
-      color: #654b59;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 35px;
-    }
-
-    .btn {
-      border: none;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 900;
-      padding: 15px 25px;
-      border-radius: 100px;
-      cursor: pointer;
-      transition: .3s ease;
-    }
-
-    .pink-btn {
-      background: linear-gradient(135deg,#ff4f9a,#ff7db2);
-      color: white;
-      box-shadow: 0 10px 30px rgba(255,79,154,.3);
-    }
-
-    .pink-btn:hover {
-      transform: translateY(-5px) scale(1.04);
-      box-shadow: 0 15px 35px rgba(255,79,154,.4);
-    }
-
-    .white-btn {
-      background: white;
-      color: #ff4f9a;
-      border: 2px solid #ffc1da;
-    }
-
-    .white-btn:hover {
-      transform: translateY(-5px);
-      background: #fff0f6;
-    }
-
-    /* FLOATING DECOR */
-
-    .float {
-      position: absolute;
-      font-size: 35px;
-      animation: float 5s ease-in-out infinite;
-    }
-
-    .f1 {
-      left: 8%;
-      top: 25%;
-    }
-
-    .f2 {
-      right: 10%;
-      top: 20%;
-      animation-delay: 1s;
-    }
-
-    .f3 {
-      left: 15%;
-      bottom: 15%;
-      animation-delay: 2s;
-    }
-
-    .f4 {
-      right: 13%;
-      bottom: 18%;
-      animation-delay: 3s;
-    }
-
-    @keyframes float {
-      0%,100% {
-        transform: translateY(0) rotate(0deg);
-      }
-
-      50% {
-        transform: translateY(-20px) rotate(8deg);
-      }
-    }
-
-    /* ================= SECTIONS ================= */
-
-    section {
-      padding: 95px 8%;
-    }
-
-    .title {
-      text-align: center;
-      font-size: 45px;
-      margin-bottom: 12px;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #7c6270;
-      margin-bottom: 50px;
-      font-size: 18px;
-    }
-
-    /* ================= ABOUT ================= */
-
-    .about {
-      background: white;
-    }
-
-    .about-box {
-      max-width: 850px;
-      margin: auto;
-      padding: 45px;
-
-      background: linear-gradient(135deg,#fff5fa,#fff);
-      border: 2px solid #ffd6e6;
-      border-radius: 30px;
-
-      box-shadow: 0 15px 45px rgba(118,55,83,.08);
-    }
-
-    .about-box p {
-      text-align: center;
-      font-size: 19px;
-      line-height: 1.9;
-    }
-
-    /* ================= CARDS ================= */
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 28px;
-      padding: 35px;
-
-      border: 1px solid #ffd6e6;
-
-      box-shadow:
-        0 15px 35px rgba(151,67,105,.08);
-
-      transition: .35s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-12px) rotate(-1deg);
-      box-shadow:
-        0 25px 50px rgba(255,79,154,.18);
-
-      border-color: #ff9ac4;
-    }
-
-    .emoji {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      color: #ff4f9a;
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      line-height: 1.7;
-      color: #735969;
-    }
-
-    /* ================= SKILLS ================= */
-
-    .skills {
-      background: linear-gradient(135deg,#ffeaf3,#f9edff);
-    }
-
-    .skill-wrap {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .skill {
-      margin: 25px 0;
-    }
-
-    .skill-top {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      font-weight: 800;
-    }
-
-    .skill-bar {
-      height: 14px;
-      background: white;
-      border-radius: 50px;
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      height: 100%;
-      border-radius: 50px;
-      background: linear-gradient(
-        90deg,
-        #ff4f9a,
-        #ff8fbd,
-        #c85cff
-      );
-    }
-
-    /* ================= FUN FACT ================= */
-
-    .fun {
-      text-align: center;
-      background: white;
-    }
-
-    .fact-box {
-      max-width: 650px;
-      margin: 25px auto;
-      min-height: 100px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 25px;
-      border-radius: 25px;
-
-      background: #fff4f9;
-      border: 2px dashed #ff9ac4;
-
-      font-size: 20px;
-      font-weight: 700;
-    }
-
-    /* ================= QUOTE ================= */
-
-    .quote {
-      text-align: center;
-      background: #ff4f9a;
-      color: white;
-    }
-
-    .quote h2 {
-      font-size: 42px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    /* ================= CONTACT ================= */
-
-    .contact {
-      text-align: center;
-      background: #fff8fc;
-    }
-
-    .contact p {
-      margin-bottom: 25px;
-      font-size: 18px;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      padding: 35px;
-      text-align: center;
-      color: #745464;
-      background: white;
-    }
-
-    /* ================= CONFETTI ================= */
-
-    .confetti {
-      position: fixed;
-      width: 10px;
-      height: 10px;
-      top: -10px;
-      border-radius: 3px;
-      z-index: 9999;
-
-      animation: fall 2.5s linear forwards;
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(100vh) rotate(720deg);
-        opacity: 0;
-      }
-    }
-
-    /* ================= MOBILE ================= */
-
-    @media(max-width:700px) {
-
-      nav {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      nav ul {
-        gap: 12px;
-        font-size: 13px;
-      }
-
-      .hero {
-        min-height: 600px;
-      }
-
-      .float {
-        font-size: 25px;
-      }
-
-      .title {
-        font-size: 35px;
-      }
-
-      .about-box {
-        padding: 28px;
-      }
-    }
-
-  </style>
 </head>
+
 
 <body>
 
-  <!-- NAVIGATION -->
 
-  <nav>
+<div class="site-wrapper">
 
-    <div class="logo">
-      Katy 💗
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+
+        <div class="logo-area">
+
+            <a href="index.html">
+                Katy.
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+            >
+                ☰
+            </button>
+
+        </div>
+
+
+
+        <div class="header-right">
+
+
+            <div class="header-info">
+
+                <div>
+
+                    <h1>
+                        Welcome to My Website
+                    </h1>
+
+                    <p>
+                        Marketing, management,
+                        creativity, experience,
+                        and projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- JS CREATES NAV HERE -->
+
+            <nav
+                class="primary-nav"
+                id="primary-navigation"
+            >
+            </nav>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- MAIN 3-COLUMN LAYOUT -->
+
+    <div class="page-layout">
+
+
+        <!-- LEFT NAVIGATION -->
+
+        <aside class="left-sidebar">
+
+            <h2>
+                Explore
+            </h2>
+
+
+            <ul class="side-nav">
+
+                <li>
+                    <a href="about.html">
+                        About Me
+                    </a>
+                </li>
+
+                <li>
+                    <a href="experience.html">
+                        Experience
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+
+            <section class="hero">
+
+                <h1>
+                    Hi, I'm
+                    <span>Katy!</span>
+                </h1>
+
+                <p>
+                    This is my personal website
+                    where you can learn more
+                    about my education,
+                    experience, projects,
+                    interests, and goals.
+                </p>
+
+            </section>
+
+
+
+            <section class="content-section">
+
+                <h2>
+                    Main Content
+                </h2>
+
+                <p>
+                    Your main page content will
+                    go here. You can include
+                    paragraphs, pictures,
+                    projects, class work,
+                    experience, or anything
+                    else you want visitors to
+                    see.
+                </p>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- RIGHT SIDEBAR -->
+
+        <aside class="right-sidebar">
+
+
+            <div class="sticky-box">
+
+                <h3>
+                    Quick Info
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Current projects
+                    </li>
+
+                    <li>
+                        Recent experience
+                    </li>
+
+                    <li>
+                        Social media
+                    </li>
+
+                    <li>
+                        Contact information
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </aside>
+
+
     </div>
 
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#favorites">Favorites</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#fun">Fun</a></li>
-    </ul>
-
-  </nav>
 
 
-  <!-- HERO -->
+    <!-- FOOTER -->
 
-  <section class="hero" id="home">
-
-    <div class="float f1">💗</div>
-    <div class="float f2">✨</div>
-    <div class="float f3">🎀</div>
-    <div class="float f4">💖</div>
-
-    <div class="hero-content">
-
-      <div class="mini-title">
-        ✨ WELCOME TO MY LITTLE CORNER OF THE INTERNET ✨
-      </div>
-
-      <h1>
-        Hi, I'm <span>Katy.</span>
-      </h1>
-
-      <p>
-        Healthcare Management + Marketing student,
-        people person, creative thinker, and professional
-        "I have an idea" person.
-      </p>
-
-      <div class="buttons">
-
-        <a href="#about" class="btn pink-btn">
-          Meet Me 💕
-        </a>
-
-        <button class="btn white-btn" id="confettiButton">
-          Make It Sparkle ✨
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-
-  <section class="about" id="about">
-
-    <h2 class="title">
-      Main Character Energy 💅
-    </h2>
-
-    <p class="subtitle">
-      Here's the actual introduction.
-    </p>
-
-    <div class="about-box">
-
-      <p>
-        I'm a student at Iowa State University studying
-        <strong>Healthcare Management and Marketing</strong>.
-        I love working with people, being creative,
-        learning new things, and taking on opportunities
-        that challenge me.
-
-        <br><br>
-
-        I'm especially interested in where
-        <strong>business, healthcare, communication,
-        and marketing</strong> all come together.
-
-        Basically, I like big ideas, good people,
-        creative projects, and staying busy. 💗
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- FAVORITES -->
-
-  <section id="favorites">
-
-    <h2 class="title">
-      My Personality in 4 Cards 🎀
-    </h2>
-
-    <p class="subtitle">
-      Click-worthy? Absolutely.
-    </p>
-
-    <div class="card-grid">
-
-      <div class="card">
-
-        <div class="emoji">🏥</div>
-
-        <h3>Healthcare</h3>
+    <footer class="site-footer">
 
         <p>
-          I'm interested in the business side of healthcare
-          and how organizations can create better experiences
-          for patients and employees.
+
+            &copy;
+            <span id="current-year"></span>
+            Katy
+
+            |
+            <a href="contact.html">
+                Contact
+            </a>
+
+            |
+            <a href="index.html">
+                Home
+            </a>
+
         </p>
 
-      </div>
+    </footer>
 
 
-      <div class="card">
+</div>
 
-        <div class="emoji">📱</div>
 
-        <h3>Marketing</h3>
+<script src="navigation.js"></script>
 
-        <p>
-          Branding, social media, creative campaigns,
-          consumer behavior, and figuring out what
-          makes people pay attention.
-        </p>
 
-      </div>
+<script>
 
+    document.getElementById(
+        "current-year"
+    ).textContent =
+        new Date().getFullYear();
 
-      <div class="card">
+</script>
 
-        <div class="emoji">💬</div>
-
-        <h3>People</h3>
-
-        <p>
-          I love meeting new people, collaborating,
-          communicating, and building genuine connections.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="emoji">✨</div>
-
-        <h3>Creativity</h3>
-
-        <p>
-          I love making things look better,
-          sound better, and feel more interesting.
-          Boring is not really my thing.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- SKILLS -->
-
-  <section class="skills" id="skills">
-
-    <h2 class="title">
-      My Skill Meter 💗
-    </h2>
-
-    <p class="subtitle">
-      Completely scientific, obviously.
-    </p>
-
-    <div class="skill-wrap">
-
-      <div class="skill">
-
-        <div class="skill-top">
-          <span>Talking to People</span>
-          <span>95%</span>
-        </div>
-
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:95%"></div>
-        </div>
-
-      </div>
-
-
-      <div class="skill">
-
-        <div class="skill-top">
-          <span>Creativity</span>
-          <span>90%</span>
-        </div>
-
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:90%"></div>
-        </div>
-
-      </div>
-
-
-      <div class="skill">
-
-        <div class="skill-top">
-          <span>Marketing Ideas</span>
-          <span>88%</span>
-        </div>
-
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:88%"></div>
-        </div>
-
-      </div>
-
-
-      <div class="skill">
-
-        <div class="skill-top">
-          <span>Making Everything Pink</span>
-          <span>100%</span>
-        </div>
-
-        <div class="skill-bar">
-          <div class="skill-fill" style="width:100%"></div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FUN FACT -->
-
-  <section class="fun" id="fun">
-
-    <h2 class="title">
-      Katy Generator ✨
-    </h2>
-
-    <p class="subtitle">
-      Press the button. You know you want to.
-    </p>
-
-    <div class="fact-box" id="factBox">
-      Your random Katy fact will appear here 💗
-    </div>
-
-    <button class="btn pink-btn" id="factButton">
-      Give Me a Fun Fact 🎀
-    </button>
-
-  </section>
-
-
-  <!-- QUOTE -->
-
-  <section class="quote">
-
-    <h2>
-      Be professional... but never boring. ✨
-    </h2>
-
-  </section>
-
-
-  <!-- CONTACT -->
-
-  <section class="contact">
-
-    <h2 class="title">
-      Let's Be Friends 💌
-    </h2>
-
-    <p>
-      Thanks for visiting my website!
-    </p>
-
-    <div class="buttons">
-
-      <a
-        class="btn pink-btn"
-        href="mailto:youremail@example.com"
-      >
-        Email Me 💌
-      </a>
-
-      <a
-        class="btn white-btn"
-        href="https://www.linkedin.com/"
-        target="_blank"
-      >
-        LinkedIn 💼
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    Designed with way too much pink 💗
-    <br><br>
-    © 2026 Katy
-
-  </footer>
-
-
-  <script>
-
-    /* RANDOM FACT BUTTON */
-
-    const facts = [
-
-      "🎓 I study Healthcare Management and Marketing at Iowa State University.",
-
-      "💬 I love meeting new people and working with different personalities.",
-
-      "📱 Marketing and social media are some of my favorite creative interests.",
-
-      "✨ I love trying new things and finding opportunities to grow.",
-
-      "💗 Pink automatically makes everything better.",
-
-      "🌪️ Go Cyclones!",
-
-      "💼 My ideal career combines business, healthcare, communication, and people.",
-
-      "🎀 I firmly believe a website can be professional AND cute."
-
-    ];
-
-    const factButton =
-      document.getElementById("factButton");
-
-    const factBox =
-      document.getElementById("factBox");
-
-    factButton.addEventListener("click", () => {
-
-      const random =
-        Math.floor(Math.random() * facts.length);
-
-      factBox.textContent = facts[random];
-
-    });
-
-
-    /* CONFETTI BUTTON */
-
-    const confettiButton =
-      document.getElementById("confettiButton");
-
-    confettiButton.addEventListener("click", () => {
-
-      const colors = [
-        "#ff4f9a",
-        "#ff9ac4",
-        "#ffc7dd",
-        "#d875ff",
-        "#ffffff"
-      ];
-
-      for(let i = 0; i < 70; i++) {
-
-        const confetti =
-          document.createElement("div");
-
-        confetti.classList.add("confetti");
-
-        confetti.style.left =
-          Math.random() * 100 + "vw";
-
-        confetti.style.background =
-          colors[
-            Math.floor(
-              Math.random() * colors.length
-            )
-          ];
-
-        confetti.style.animationDuration =
-          (1.5 + Math.random() * 2) + "s";
-
-        document.body.appendChild(confetti);
-
-        setTimeout(() => {
-          confetti.remove();
-        }, 3500);
-
-      }
-
-    });
-
-  </script>
 
 </body>
+
 </html>
