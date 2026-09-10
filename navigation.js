@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
         },
 
         {
-            name: "Projects",
-            link: "projects.html"
+            name: "Products",
+            link: "products.html"
         },
 
         {
