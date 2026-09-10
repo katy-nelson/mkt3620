@@ -1,6 +1,6 @@
-/* ================================
+/* =========================================
    GLOBAL RESET
-================================ */
+========================================= */
 
 * {
     margin: 0;
@@ -14,294 +14,563 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f7b8cf;
+
+    /* Pink background visible around website */
+    background-color: #f7b6cc;
+
     color: #222;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 
-/* ================================
-   MAIN WEBSITE CONTAINER
-   10% pink background on each side
-================================ */
+/* =========================================
+   MAIN WEBSITE WRAPPER
+   80% width = 10% background on each side
+========================================= */
 
-.site-container {
+.site-wrapper {
     width: 80%;
     margin: 0 auto;
     min-height: 100vh;
-    background-color: #fff8fb;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+
+    background-color: white;
+
+    border-left: 2px solid #222;
+    border-right: 2px solid #222;
 }
 
 
-/* ================================
-   NAVIGATION
-================================ */
+/* =========================================
+   HEADER
+========================================= */
 
-.navbar {
-    width: 100%;
-    padding: 22px 6%;
+.site-header {
+    display: grid;
+
+    /* logo area + informational area */
+    grid-template-columns: 24% 76%;
+
+    min-height: 115px;
+
+    border-bottom: 2px solid #222;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-area {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
-    background-color: #ffffff;
-    border-bottom: 2px solid #f7b8cf;
+    padding: 20px;
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    border-right: 2px solid #222;
 }
 
-.logo {
-    font-size: 1.7rem;
-    font-weight: 800;
-    color: #d94f86;
+.logo-area a {
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    color: #d94f85;
+
     text-decoration: none;
 }
 
-.nav-links {
+
+/* =========================================
+   HEADER INFORMATION
+========================================= */
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-info {
+    flex: 1;
+
+    padding: 15px 20px;
+
     display: flex;
     align-items: center;
-    gap: 30px;
+}
+
+.header-info h1 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.header-info p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+
+/* =========================================
+   PRIMARY TOP NAVIGATION
+========================================= */
+
+.primary-nav {
+    border-top: 2px solid #222;
+}
+
+.primary-nav ul {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
     list-style: none;
 }
 
-.nav-links a {
-    color: #333;
+.primary-nav li {
+    flex: 1;
+    text-align: center;
+}
+
+.primary-nav a {
+    display: block;
+
+    padding: 10px 15px;
+
+    color: #222;
     text-decoration: none;
-    font-weight: 600;
-    transition: 0.25s ease;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #d94f86;
+.primary-nav a:hover,
+.primary-nav a.active {
+    background-color: #f7b6cc;
 }
 
 
-/* ================================
-   HERO SECTION
-================================ */
+/* =========================================
+   OPTIONAL SECONDARY TOP NAVIGATION
+========================================= */
+
+.secondary-top-nav {
+    border-top: 1px solid #222;
+
+    background-color: #fff0f5;
+}
+
+.secondary-top-nav ul {
+    display: flex;
+    justify-content: center;
+
+    list-style: none;
+}
+
+.secondary-top-nav a {
+    display: block;
+
+    padding: 7px 18px;
+
+    text-decoration: none;
+
+    color: #555;
+
+    font-size: 0.9rem;
+}
+
+.secondary-top-nav a:hover {
+    color: #d94f85;
+}
+
+
+/* =========================================
+   MAIN PAGE GRID
+========================================= */
+
+.page-layout {
+    display: grid;
+
+    /*
+        Left Navigation
+        Main Content
+        Right Sidebar
+    */
+
+    grid-template-columns: 23% 54% 23%;
+
+    min-height: 600px;
+}
+
+
+/* =========================================
+   LEFT SIDEBAR NAVIGATION
+========================================= */
+
+.left-sidebar {
+    padding: 35px 22px;
+
+    border-right: 2px solid #222;
+
+    background-color: #fffafa;
+}
+
+.left-sidebar h2 {
+    font-size: 1.1rem;
+
+    margin-bottom: 15px;
+
+    color: #d94f85;
+}
+
+.side-nav {
+    list-style: none;
+
+    margin-bottom: 35px;
+}
+
+.side-nav li {
+    margin-bottom: 10px;
+}
+
+.side-nav a {
+    display: block;
+
+    padding: 8px 10px;
+
+    text-decoration: none;
+
+    color: #222;
+
+    border-radius: 6px;
+
+    transition: 0.2s ease;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+    background-color: #f7b6cc;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    padding: 30px;
+}
+
+
+/* =========================================
+   HERO AREA
+========================================= */
 
 .hero {
-    min-height: 75vh;
-    padding: 80px 8%;
+    width: 100%;
+
+    min-height: 230px;
+
+    margin-bottom: 30px;
+
+    padding: 30px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
 
-    background: linear-gradient(
-        135deg,
-        #fff8fb 0%,
-        #ffe4ee 100%
-    );
+    justify-content: center;
+
+    background-color: #fde5ee;
+
+    border: 2px solid #222;
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 6vw, 6rem);
-    line-height: 1;
-    margin-bottom: 20px;
+    font-size: 2.4rem;
+
+    margin-bottom: 10px;
 }
 
 .hero h1 span {
-    color: #d94f86;
+    color: #d94f85;
 }
 
 .hero p {
-    max-width: 650px;
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 30px;
+    font-size: 1.05rem;
+
+    max-width: 600px;
 }
 
 
-/* ================================
-   BUTTONS
-================================ */
+/* =========================================
+   CONTENT AREA
+========================================= */
 
-.btn {
-    display: inline-block;
-    padding: 13px 25px;
-
-    background-color: #d94f86;
-    color: white;
-
-    text-decoration: none;
-    font-weight: 700;
-
-    border: 2px solid #d94f86;
-    border-radius: 30px;
-
-    cursor: pointer;
-    transition: 0.25s ease;
+.content-section {
+    margin-bottom: 40px;
 }
 
-.btn:hover {
-    background-color: transparent;
-    color: #d94f86;
-    transform: translateY(-3px);
+.content-section h2 {
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+
+    color: #d94f85;
 }
 
-.btn-secondary {
-    background-color: transparent;
-    color: #d94f86;
+.content-section h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.btn-secondary:hover {
-    background-color: #d94f86;
-    color: white;
-}
-
-
-/* ================================
-   GENERAL SECTIONS
-================================ */
-
-section {
-    padding: 80px 8%;
-}
-
-.section-title {
-    font-size: 2.5rem;
+.content-section p {
     margin-bottom: 15px;
 }
 
-.section-subtitle {
-    color: #d94f86;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
+/* =========================================
+   RIGHT SIDEBAR
+========================================= */
+
+.right-sidebar {
+    padding: 30px 22px;
+
+    border-left: 2px solid #222;
+
+    background-color: #fffafa;
+}
+
+.right-sidebar h2 {
+    margin-bottom: 15px;
+
+    font-size: 1.15rem;
+
+    color: #d94f85;
 }
 
 
-/* ================================
-   CARDS
-================================ */
+/* Sticky content like the example layout */
 
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 40px;
+.sticky-box {
+    position: sticky;
+
+    top: 20px;
+
+    padding: 18px;
+
+    background-color: #fde5ee;
+
+    border: 1px solid #d94f85;
+
+    border-radius: 10px;
 }
 
-.card {
-    background-color: white;
-    padding: 30px;
-
-    border-radius: 18px;
-    border: 1px solid #f2d3df;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(217, 79, 134, 0.15);
-}
-
-.card h3 {
+.sticky-box h3 {
     margin-bottom: 10px;
-    color: #d94f86;
+}
+
+.sticky-box ul {
+    padding-left: 18px;
+}
+
+.sticky-box li {
+    margin-bottom: 8px;
 }
 
 
-/* ================================
-   FOOTER
-================================ */
+/* =========================================
+   BUTTONS
+========================================= */
 
-footer {
-    padding: 40px 8%;
+.button {
+    display: inline-block;
+
+    padding: 11px 22px;
+
+    background-color: #d94f85;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    border: 2px solid #d94f85;
+
+    transition: 0.2s ease;
+}
+
+.button:hover {
+    background-color: white;
+
+    color: #d94f85;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    border-top: 2px solid #222;
+
+    padding: 20px 30px;
+
     text-align: center;
 
-    background-color: #222;
-    color: white;
+    background-color: #fff0f5;
+
+    font-size: 0.9rem;
 }
 
-footer a {
-    color: #f7b8cf;
+.site-footer a {
+    color: #d94f85;
+
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
 }
 
 
-/* ================================
-   MOBILE NAVIGATION
-================================ */
+/* =========================================
+   MOBILE NAV BUTTON
+========================================= */
 
 .menu-toggle {
     display: none;
-    background: none;
+
     border: none;
 
+    background: transparent;
+
     font-size: 1.8rem;
+
     cursor: pointer;
-    color: #d94f86;
+
+    color: #d94f85;
 }
 
 
-/* ================================
-   RESPONSIVE DESIGN
-================================ */
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-    .site-container {
+    .site-wrapper {
         width: 90%;
     }
 
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .page-layout {
+        grid-template-columns: 25% 75%;
     }
+
+    .right-sidebar {
+        grid-column: 1 / -1;
+
+        border-left: none;
+
+        border-top: 2px solid #222;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        background-color: white;
+    }
+
+    .site-wrapper {
+        width: 100%;
+
+        border: none;
+    }
+
+
+    /* Header stacks */
+
+    .site-header {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-area {
+        border-right: none;
+
+        border-bottom: 2px solid #222;
+
+        justify-content: space-between;
+    }
+
+
+    /* Show mobile menu button */
 
     .menu-toggle {
         display: block;
     }
 
-    .nav-links {
+
+    /* Hide navigation until clicked */
+
+    .primary-nav {
         display: none;
+    }
 
-        position: absolute;
-        top: 100%;
-        left: 0;
+    .primary-nav.show {
+        display: block;
+    }
 
-        width: 100%;
-        padding: 25px;
-
+    .primary-nav ul {
         flex-direction: column;
-
-        background-color: white;
-        border-bottom: 2px solid #f7b8cf;
     }
 
-    .nav-links.show {
-        display: flex;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .site-container {
+    .primary-nav li {
         width: 100%;
     }
 
-    .hero {
-        padding: 60px 7%;
+
+    /* Hide optional navigation */
+
+    .secondary-top-nav {
+        display: none;
     }
 
-    section {
-        padding: 60px 7%;
-    }
 
-    .card-grid {
+    /* Main page stacks */
+
+    .page-layout {
         grid-template-columns: 1fr;
     }
 
-    .hero h1 {
-        font-size: 3rem;
+    .left-sidebar {
+        border-right: none;
+
+        border-bottom: 2px solid #222;
     }
+
+    .right-sidebar {
+        border-left: none;
+
+        border-top: 2px solid #222;
+    }
+
+
+    .main-content {
+        padding: 20px;
+    }
+
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
 }
