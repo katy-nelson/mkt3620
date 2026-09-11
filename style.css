@@ -574,3 +574,68 @@ body {
     }
 
 }
+/* ========================================
+   MARKETING POLL
+======================================== */
+
+.marketing-poll {
+    width: 100%;
+    padding: 60px 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.poll-heading {
+    max-width: 750px;
+    margin: 0 auto 35px auto;
+}
+
+.poll-label {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.poll-heading h2 {
+    font-size: 38px;
+    margin: 0 0 15px 0;
+}
+
+.poll-description {
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 auto;
+}
+
+.google-form-container {
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.google-form-container iframe {
+    display: block;
+    width: 100%;
+    min-height: 750px;
+    border: none;
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+
+    .marketing-poll {
+        padding: 40px 20px;
+    }
+
+    .poll-heading h2 {
+        font-size: 30px;
+    }
+
+    .google-form-container {
+        width: 100%;
+    }
+}
